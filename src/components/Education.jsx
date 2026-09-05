@@ -1,41 +1,45 @@
-const education = [
-  {
-    degree: "Bachelor of Engineering",
-    institution: "Chandigarh University",
-    duration: "2024 — 2028",
-    subtitle: "Computer Science Engineering",
-    description:
-      "Pursuing Computer Science Engineering with a focus on software development, full-stack technologies, data structures and algorithms, and problem solving.",
-    tags: [
-      "Software Development",
-      "Full Stack Development",
-      "Computer Networks",
-      "Data Structures & Algorithms",
-      "Operating Systems",
-      "Database Management Systems",
-      "Software Engineering",
-      "Machine Learning",
-    ],
-  },
+import { motion } from "framer-motion";
 
+const journey = [
   {
-    degree: "Class XII",
-    institution: "Sri Sri Ravishankar Vidya Mandir",
-    duration: "2022 — 2024",
-    subtitle: "Science",
+    year: "2024",
+    title: "Started Computer Science Engineering",
+    place: "Chandigarh University",
     description:
-      "Higher secondary education with a Science stream.",
-    tags: ["Science", "Physics", "Chemistry", "Mathematics", "Biology"],
+      "Started my journey in Computer Science Engineering, building a strong foundation in programming, computer science fundamentals, and software development.",
+    tags: ["C++", "Java", "Programming", "Computer Science"],
   },
-
   {
-    degree: "Class X",
-    institution: "Holy Cross School, Agartala",
-    duration: "2023 — 2024",
-    subtitle: "Secondary Education",
+    year: "2025",
+    title: "Web Development Intern",
+    place: "DAS Solutions",
     description:
-      "Secondary school education.",
-    tags: ["Mathematics", "Physics", "Chemistry", "Biology"],
+      "Worked on real-world web applications using Angular, React, TypeScript, JavaScript, and REST APIs.",
+    tags: ["Angular", "React", "TypeScript", "REST APIs"],
+  },
+  {
+    year: "2026",
+    title: "Software Development Intern",
+    place: "SACARES Pharmaceuticals Pvt. Ltd.",
+    description:
+      "Worked on website development, digital presence improvements, and an internal workflow management system.",
+    tags: ["JavaScript", "HTML", "CSS", "MySQL"],
+  },
+  {
+    year: "2026",
+    title: "Hackathons & Technical Projects",
+    place: "Building • Learning • Experimenting",
+    description:
+      "Expanded into full-stack development, AI-based projects, machine learning, hackathons, and problem solving.",
+    tags: ["Full Stack", "AI", "Machine Learning", "DSA"],
+  },
+  {
+    year: "NOW",
+    title: "Becoming a Better Software Engineer",
+    place: "Currently",
+    description:
+      "Focused on strengthening full-stack development, data structures and algorithms, software engineering, and building meaningful products.",
+    tags: ["React", "Node.js", "DSA", "Software Engineering"],
   },
 ];
 
@@ -43,97 +47,165 @@ const Education = () => {
   return (
     <section
       id="education"
-      className="py-24 px-6"
+      className="relative px-6 py-24 overflow-hidden"
     >
-      <div className="max-w-6xl mx-auto">
+      {/* Background Glow */}
+      <motion.div
+        className="absolute top-1/3 -left-32 w-72 h-72 bg-purple-500/10 rounded-full blur-3xl"
+        animate={{
+          y: [0, 40, 0],
+          scale: [1, 1.1, 1],
+        }}
+        transition={{
+          duration: 8,
+          repeat: Infinity,
+          ease: "easeInOut",
+        }}
+      />
 
-        {/* Heading */}
-        <div className="mb-12">
+      <div className="relative max-w-5xl mx-auto">
+
+        {/* Section Heading */}
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.2 }}
+          transition={{ duration: 0.7 }}
+        >
           <p className="text-sm font-medium tracking-[0.25em] uppercase text-purple-500">
-            Education
+            My Journey
           </p>
 
-          <h2 className="mt-3 font-[Syne] text-4xl md:text-5xl font-bold">
-            My{" "}
-            <span className="text-purple-500">
-              Academic journey.
-            </span>
+          <h2 className="mt-3 font-[Syne] text-4xl md:text-6xl font-bold">
+            From learning to building.
           </h2>
-        </div>
+
+          <p className="mt-5 max-w-2xl text-gray-600 dark:text-gray-400">
+            A timeline of the experiences, projects, and milestones
+            that have shaped my journey as a software developer.
+          </p>
+        </motion.div>
 
         {/* Timeline */}
-        <div className="relative">
+        <div className="relative mt-16">
 
-          {/* Timeline Line */}
-          <div className="absolute left-[7px] top-2 bottom-0 w-px bg-gray-200 dark:bg-gray-800 hidden md:block" />
+          {/* Vertical Line */}
+          <div className="absolute left-[11px] md:left-1/2 top-0 bottom-0 w-px bg-gray-200 dark:bg-gray-800 md:-translate-x-1/2" />
 
-          <div className="space-y-10">
-
-            {education.map((item, index) => (
-              <div
-                key={index}
-                className="relative md:pl-12"
+          <div className="space-y-16">
+            {journey.map((item, index) => (
+              <motion.div
+                key={item.year + item.title}
+                initial={{
+                  opacity: 0,
+                  y: 40,
+                }}
+                whileInView={{
+                  opacity: 1,
+                  y: 0,
+                }}
+                viewport={{
+                  once: true,
+                  amount: 0.2,
+                }}
+                transition={{
+                  duration: 0.7,
+                  delay: index * 0.08,
+                }}
+                className={`relative flex items-start md:items-center ${
+                  index % 2 === 0
+                    ? "md:flex-row"
+                    : "md:flex-row-reverse"
+                }`}
               >
-
                 {/* Timeline Dot */}
-                <div className="hidden md:block absolute left-0 top-2 w-4 h-4 rounded-full border-4 border-white dark:border-black bg-purple-500" />
+                <motion.div
+                  className="absolute left-0 md:left-1/2 w-[23px] h-[23px] rounded-full border-4 border-white dark:border-black bg-purple-500 md:-translate-x-1/2 z-10"
+                  whileHover={{
+                    scale: 1.35,
+                  }}
+                  transition={{
+                    duration: 0.2,
+                  }}
+                />
 
-                {/* Education Card */}
-                <div className="p-7 md:p-9 rounded-2xl border border-gray-200 dark:border-gray-800">
+                {/* Content */}
+                <div
+                  className={`ml-12 md:ml-0 w-full md:w-[45%] ${
+                    index % 2 === 0
+                      ? "md:pr-8"
+                      : "md:pl-8"
+                  }`}
+                >
+                  <motion.div
+                    whileHover={{
+                      y: -5,
+                    }}
+                    transition={{
+                      duration: 0.25,
+                    }}
+                    className="group rounded-3xl border border-gray-200 dark:border-gray-800 p-6 md:p-7 bg-white/60 dark:bg-black/40 backdrop-blur-sm hover:border-purple-500/40 hover:shadow-xl transition-all duration-300"
+                  >
+                    {/* Year */}
+                    <div className="flex items-center justify-between gap-4">
+                      <span className="font-[Syne] text-2xl font-bold text-purple-500">
+                        {item.year}
+                      </span>
 
-                  {/* Header */}
-                  <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-4">
-
-                    <div>
-                      <h3 className="text-2xl md:text-3xl font-bold">
-                        {item.degree}
-                      </h3>
-
-                      <p className="mt-2 text-lg text-purple-500 font-medium">
-                        {item.institution}
-                      </p>
+                      <span className="text-xs uppercase tracking-wider text-gray-400">
+                        {String(index + 1).padStart(2, "0")}
+                      </span>
                     </div>
 
-                    <div className="md:text-right">
-                      <p className="font-medium">
-                        {item.duration}
-                      </p>
+                    {/* Title */}
+                    <h3 className="mt-4 font-[Syne] text-xl md:text-2xl font-bold group-hover:text-purple-500 transition-colors duration-300">
+                      {item.title}
+                    </h3>
 
-                      <p className="mt-1 text-sm text-gray-500">
-                        {item.subtitle}
-                      </p>
-                    </div>
+                    {/* Place */}
+                    <p className="mt-2 text-sm font-medium text-gray-500 dark:text-gray-400">
+                      {item.place}
+                    </p>
 
-                  </div>
+                    {/* Description */}
+                    <p className="mt-4 text-sm md:text-base leading-relaxed text-gray-600 dark:text-gray-400">
+                      {item.description}
+                    </p>
 
-                  {/* Description */}
-                  <p className="mt-6 text-lg leading-relaxed text-gray-600 dark:text-gray-400">
-                    {item.description}
-                  </p>
-
-                  {/* Tags */}
-                  {item.tags.length > 0 && (
-                    <div className="mt-7 flex flex-wrap gap-3">
-
+                    {/* Tags */}
+                    <div className="mt-5 flex flex-wrap gap-2">
                       {item.tags.map((tag) => (
                         <span
                           key={tag}
-                          className="px-3 py-1.5 rounded-full bg-gray-100 dark:bg-gray-900 border border-gray-200 dark:border-gray-800 text-sm font-medium"
+                          className="px-3 py-1.5 rounded-full text-xs font-medium border border-gray-200 dark:border-gray-800 text-gray-600 dark:text-gray-400"
                         >
                           {tag}
                         </span>
                       ))}
-
                     </div>
-                  )}
-
+                  </motion.div>
                 </div>
-              </div>
+              </motion.div>
             ))}
-
           </div>
         </div>
 
+        {/* Ending */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+          className="mt-20 text-center"
+        >
+          <p className="text-sm uppercase tracking-[0.25em] text-gray-400">
+            The journey continues
+          </p>
+
+          <p className="mt-3 font-[Syne] text-2xl md:text-3xl font-bold">
+            Build. Learn. Repeat. 🚀
+          </p>
+        </motion.div>
       </div>
     </section>
   );
