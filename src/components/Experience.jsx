@@ -9,15 +9,21 @@ const experiences = [
       "Worked on software development and digital solutions focused on improving the company's online presence and internal workflows.",
 
     points: [
-      "Developed and maintained the company website.",
-      "Worked on enhancing the company's digital presence and user experience.",
-      "Contributed to an internal workflow management system.",
-      "Collaborated with the team to understand requirements and implement solutions.",
-    ],
+    "Developed and maintained the company's website with a focus on responsive design and usability.",
+    "Enhanced the company's digital presence by improving website design, user experience, and mobile compatibility.",
+    "Contributed to the development of an internal workflow management system to streamline day-to-day operations.",
+    "Collaborated with the team to understand requirements, implement features, and deliver practical software solutions.",
+  ],
 
     technologies: [
-      "HTML",
-      "CSS",
+      "React.js",
+      "Node.js",
+      "Express.js",
+      "Bootstrap",
+      "Postman",
+      "REST APIs",
+      "HTML5",
+      "CSS3",
       "JavaScript",
       "MySQL",
     ],

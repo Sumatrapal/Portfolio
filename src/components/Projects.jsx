@@ -21,8 +21,8 @@ const projects = [
       "JavaScript",
     ],
 
-    github: "#",
-    live: "#",
+    github: "https://github.com/Sumatrapal/VedaSphere",
+    live: "https://veda-sphere.vercel.app/",
 
     featured: true,
   },
@@ -107,33 +107,6 @@ const projects = [
 
     github: "https://github.com/Sumatrapal/Hospital-webpage",
     live: "https://hospital-webpage-six.vercel.app/",
-
-    featured: false,
-  },
-
-  {
-    title: "Movie Recommendation System",
-    category: "Machine Learning",
-
-    description:
-      "A machine learning based movie recommendation system that explores personalized recommendations using collaborative filtering and matrix factorization.",
-
-    highlights: [
-      "Worked with the MovieLens dataset for recommendation experiments.",
-      "Implemented matrix factorization using Singular Value Decomposition (SVD).",
-      "Explored user-item interaction data to generate personalized recommendations.",
-      "Applied machine learning concepts to a real-world recommendation problem.",
-    ],
-
-    technologies: [
-      "Python",
-      "Machine Learning",
-      "SVD",
-      "MovieLens",
-    ],
-
-    github: "#",
-    live: "#",
 
     featured: false,
   },
