@@ -2,17 +2,24 @@ import { motion } from "framer-motion";
 import { ArrowDown } from "lucide-react";
 
 const AnimatedRole = () => {
-  const text = "Software Developer & Full Stack Developer";
+  const words = [
+    { text: "Software", purple: false },
+    { text: "Developer", purple: false },
+    { text: "&", purple: false },
+    { text: "Full", purple: true },
+    { text: "Stack", purple: true },
+    { text: "Developer", purple: true },
+  ];
 
   return (
     <motion.span
-      className="inline-block"
+      className="inline-flex flex-wrap justify-center gap-x-2 gap-y-1"
       initial="hidden"
       animate="visible"
       variants={{
         visible: {
           transition: {
-            staggerChildren: 0.06,
+            staggerChildren: 0.15,
             repeat: Infinity,
             repeatType: "loop",
             repeatDelay: 1.5,
@@ -20,20 +27,20 @@ const AnimatedRole = () => {
         },
       }}
     >
-      {text.split("").map((char, index) => (
+      {words.map((word, wordIndex) => (
         <motion.span
-          key={index}
-          className={`inline-block ${
-            index >= 21 ? "text-purple-500" : ""
+          key={wordIndex}
+          className={`inline-block whitespace-nowrap ${
+            word.purple ? "text-purple-500" : ""
           }`}
           variants={{
             hidden: {
-              opacity: 0.45,
+              opacity: 0.5,
               y: 0,
             },
             visible: {
-              opacity: [0.45, 1, 0.65, 1],
-              y: [0, -4, 0],
+              opacity: [0.5, 1, 0.7, 1],
+              y: [0, -3, 0],
               transition: {
                 duration: 1.2,
                 ease: "easeInOut",
@@ -41,7 +48,7 @@ const AnimatedRole = () => {
             },
           }}
         >
-          {char === " " ? "\u00A0" : char}
+          {word.text}
         </motion.span>
       ))}
     </motion.span>
@@ -123,7 +130,14 @@ const Hero = () => {
 
         {/* Animated Role */}
         <motion.h2
-          className="mt-5 text-2xl sm:text-3xl md:text-4xl font-semibold"
+          className="
+            mt-5
+            text-[1.65rem]
+            sm:text-3xl
+            md:text-4xl
+            font-semibold
+            leading-tight
+          "
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{
