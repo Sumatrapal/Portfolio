@@ -14,10 +14,9 @@ const projects = [
     ],
 
     technologies: [
-      "Next.js",
       "React",
       "Tailwind CSS",
-      "AI",
+      "Gen AI",
       "JavaScript",
     ],
 
@@ -43,7 +42,6 @@ const projects = [
     ],
 
     technologies: [
-      "React",
       "JavaScript",
       "TMDB API",
       "CSS",
