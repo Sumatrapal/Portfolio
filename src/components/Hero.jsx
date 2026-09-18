@@ -2,7 +2,7 @@ import { motion } from "framer-motion";
 import { ArrowDown } from "lucide-react";
 
 const AnimatedRole = () => {
-  const words = [
+  const desktopWords = [
     { text: "Software", purple: false },
     { text: "Developer", purple: false },
     { text: "&", purple: false },
@@ -11,47 +11,98 @@ const AnimatedRole = () => {
     { text: "Developer", purple: true },
   ];
 
+  const mobileLines = [
+    { text: "Software Developer", purple: false },
+    { text: "&", purple: false },
+    { text: "Full Stack Developer", purple: true },
+  ];
+
   return (
-    <motion.span
-      className="inline-flex flex-wrap justify-center gap-x-2 gap-y-1"
-      initial="hidden"
-      animate="visible"
-      variants={{
-        visible: {
-          transition: {
-            staggerChildren: 0.15,
-            repeat: Infinity,
-            repeatType: "loop",
-            repeatDelay: 1.5,
+    <>
+      {/* Mobile — 3 Lines */}
+      <motion.span
+        className="flex flex-col items-center md:hidden"
+        initial="hidden"
+        animate="visible"
+        variants={{
+          visible: {
+            transition: {
+              staggerChildren: 0.2,
+              repeat: Infinity,
+              repeatType: "loop",
+              repeatDelay: 1.5,
+            },
           },
-        },
-      }}
-    >
-      {words.map((word, wordIndex) => (
-        <motion.span
-          key={wordIndex}
-          className={`inline-block whitespace-nowrap ${
-            word.purple ? "text-purple-500" : ""
-          }`}
-          variants={{
-            hidden: {
-              opacity: 0.5,
-              y: 0,
-            },
-            visible: {
-              opacity: [0.5, 1, 0.7, 1],
-              y: [0, -3, 0],
-              transition: {
-                duration: 1.2,
-                ease: "easeInOut",
+        }}
+      >
+        {mobileLines.map((line, index) => (
+          <motion.span
+            key={index}
+            className={`whitespace-nowrap ${
+              line.purple ? "text-purple-500" : ""
+            }`}
+            variants={{
+              hidden: {
+                opacity: 0.45,
+                y: 0,
               },
+              visible: {
+                opacity: [0.45, 1, 0.7, 1],
+                y: [0, -3, 0],
+                transition: {
+                  duration: 1.2,
+                  ease: "easeInOut",
+                },
+              },
+            }}
+          >
+            {line.text}
+          </motion.span>
+        ))}
+      </motion.span>
+
+      {/* Desktop */}
+      <motion.span
+        className="hidden md:inline-flex flex-wrap justify-center gap-x-2"
+        initial="hidden"
+        animate="visible"
+        variants={{
+          visible: {
+            transition: {
+              staggerChildren: 0.15,
+              repeat: Infinity,
+              repeatType: "loop",
+              repeatDelay: 1.5,
             },
-          }}
-        >
-          {word.text}
-        </motion.span>
-      ))}
-    </motion.span>
+          },
+        }}
+      >
+        {desktopWords.map((word, index) => (
+          <motion.span
+            key={index}
+            className={`whitespace-nowrap ${
+              word.purple ? "text-purple-500" : ""
+            }`}
+            variants={{
+              hidden: {
+                opacity: 0.45,
+                y: 0,
+              },
+              visible: {
+                opacity: [0.45, 1, 0.7, 1],
+                y: [0, -3, 0],
+                transition: {
+                  duration: 1.2,
+                  ease: "easeInOut",
+                },
+              },
+            }}
+          >
+            {word.text}
+          </motion.span>
+        ))}
+      </motion.span>
+    </>
   );
 };
 
@@ -132,7 +183,7 @@ const Hero = () => {
         <motion.h2
           className="
             mt-5
-            text-[1.65rem]
+            text-[1.7rem]
             sm:text-3xl
             md:text-4xl
             font-semibold
