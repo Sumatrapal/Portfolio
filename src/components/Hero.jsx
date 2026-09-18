@@ -217,44 +217,62 @@ const Hero = () => {
         </motion.p>
 
         {/* Buttons */}
-        <motion.div
-          className="mt-9 flex flex-wrap items-center justify-center gap-4"
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{
-            delay: 1,
-            duration: 0.7,
-          }}
-        >
-          <motion.a
-            href="#projects"
-            whileHover={{
-              scale: 1.05,
-              y: -2,
-            }}
-            whileTap={{
-              scale: 0.97,
-            }}
-            className="px-6 py-3 rounded-full bg-black text-white dark:bg-white dark:text-black font-medium hover:shadow-lg transition-shadow duration-300"
-          >
-            View My Work
-          </motion.a>
+<motion.div
+  className="mt-9 flex flex-wrap items-center justify-center gap-4"
+  initial={{ opacity: 0, y: 20 }}
+  animate={{ opacity: 1, y: 0 }}
+  transition={{
+    delay: 1,
+    duration: 0.7,
+  }}
+>
+  {/* View My Work */}
+  <motion.a
+    href="#projects"
+    whileHover={{
+      scale: 1.05,
+      y: -2,
+    }}
+    whileTap={{
+      scale: 0.97,
+    }}
+    className="px-6 py-3 rounded-full bg-black text-white dark:bg-white dark:text-black font-medium hover:shadow-lg transition-shadow duration-300"
+  >
+    View My Work
+  </motion.a>
 
-          <motion.a
-            href="#contact"
-            whileHover={{
-              scale: 1.05,
-              y: -2,
-            }}
-            whileTap={{
-              scale: 0.97,
-            }}
-            className="px-6 py-3 rounded-full border border-gray-300 dark:border-gray-700 font-medium hover:bg-gray-100 dark:hover:bg-gray-900 transition-colors duration-300"
-          >
-            Let's Connect
-          </motion.a>
-        </motion.div>
+  {/* Download Resume */}
+  <motion.a
+    href="/resume.pdf"
+    target="_blank"
+    rel="noreferrer"
+    whileHover={{
+      scale: 1.05,
+      y: -2,
+    }}
+    whileTap={{
+      scale: 0.97,
+    }}
+    className="px-6 py-3 rounded-full border border-purple-500 text-purple-500 font-medium hover:bg-purple-500 hover:text-white transition-all duration-300"
+  >
+    Download Resume
+  </motion.a>
 
+  {/* Let's Connect */}
+  <motion.a
+    href="#contact"
+    whileHover={{
+      scale: 1.05,
+      y: -2,
+    }}
+    whileTap={{
+      scale: 0.97,
+    }}
+    className="px-6 py-3 rounded-full border border-gray-300 dark:border-gray-700 font-medium hover:bg-gray-100 dark:hover:bg-gray-900 transition-colors duration-300"
+  >
+    Let's Connect
+  </motion.a>
+</motion.div>
         {/* Social Links */}
         <motion.div
           className="mt-8 flex justify-center gap-4"
@@ -282,7 +300,9 @@ const Hero = () => {
           </motion.a>
 
           <motion.a
-            href="#"
+            href="https://www.linkedin.com/in/sumatrapal/"
+            target="_blank"
+            rel="noreferrer"
             whileHover={{
               scale: 1.08,
               y: -3,

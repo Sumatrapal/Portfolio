@@ -53,7 +53,7 @@ const About = () => {
             </div>
 
             <div className="p-6 rounded-2xl border border-gray-200 dark:border-gray-800">
-              <p className="text-3xl font-bold">2+</p>
+              <p className="text-3xl font-bold">3+</p>
               <p className="mt-2 text-gray-500">
                 Hackathons
               </p>
