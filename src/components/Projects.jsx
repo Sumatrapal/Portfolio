@@ -53,7 +53,7 @@ const projects = [
       "Simple and practical user workflow",
     ],
     technologies: ["Python", "Tkinter", "SQLite"],
-    github: "#",
+    github: "https://github.com/Sumatrapal/Expense-tracker",
     live: "#",
     image: null,
     featured: false,
