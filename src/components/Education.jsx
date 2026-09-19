@@ -42,7 +42,7 @@ const journey = [
     tags: ["React", "Node.js", "DSA", "Software Engineering"],
   },
 ];
-qwert
+
 const Education = () => {
   return (
     <section
